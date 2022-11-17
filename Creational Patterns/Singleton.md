@@ -1,7 +1,9 @@
 __Singleton__
 ===
 
-The Singleton design pattern ensures a class has only one instance and provide a global point of access to it.
+The singleton pattern is what you use when you want to ensure that only one instance of an object is ever created. In classical object-oriented programming languages, the concepts behind creating a singleton was a bit tricky to wrap your mind around because it involved a class that has both static and non-static properties and methods.
+
+> The Singleton design pattern ensures a class has only one instance and provide a global point of access to it.
 
 - Defines an Instance operation that lets clients access its unique instance. Instance is a class operation.
 - Responsible for creating and maintaining its own unique instance.
