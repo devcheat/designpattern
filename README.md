@@ -3,7 +3,26 @@
 
 ## What are Design Patterns?
 
-Design patterns are solutions to software design problems you find again and again in real-world application development. Patterns are about reusable designs and interactions of objects.
+> Design patterns are solutions to software design problems you find again and again in real-world application development. Patterns are about reusable designs and interactions of objects.
+
+A design pattern is a proven design solution to a common problem faced by software developers. Design patterns became popular with the rise of Object Oriented Analysis and Design (OOAD). Design patterns are designed to help developers deliver higher quality, more easily maintained software products in less time and at lower cost.
+Design patterns are:
+
+- **encapsulated** - They embody design knowledge regarding collaboration of classes and objects, distribution of
+- **responsibility**, and other design issues.
+- **object-oriented** - They incorporate OOAD principles—e.g., low coupling, high cohesion.
+- **reusable** - They are adaptable, flexible, general solutions to classes of problems with broad applicability. Design patterns simplify the task facing the developer.
+
+## How did design patterns originate?
+The history of design patterns is quite short. They originated as an architectural concept proposed by Christopher Alexander in the late nineteen seventies (ca. 1977). Kent Beck and Ward Cunningham experimented with the notion of applying patterns to computer programming in the late nineteen eighties (ca. 1987). Design patterns did not become widely used in computer science until after Design Patterns: Elements of Reusable Object-Oriented Software by the so-called Gang of Four was published in 1994.
+
+## How are design patterns classified?
+Design patterns are categorized to facilitate learning and extending them. They are classified in terms of the underlying problems they address, i.e. according to usage.
+The three main design pattern categories are:
+
+- **Behavioral design patterns** - characterize the manner of class and object interaction and how responsibilities are distributed among them.
+- **Creational design patterns** - address the object creation process. Creational design patterns encapsulate knowledge about how, when, and by whom an instance is created.
+- **Structural design patterns** - address the composition of classes and objects. Design patterns vary both in granularity and level of abstraction.
 
 ## Creational Patterns
 
