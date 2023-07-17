@@ -23,7 +23,7 @@ Design patterns are categorized to facilitate learning and extending them. They 
 The three main design pattern categories are:
 
   [**Creational Patterns**](#creational-patterns)
-  ---
+  
   Address the object creation process. Creational design patterns encapsulate knowledge about how, when, and by whom an instance is created.
   - [**Factory Method**](#factory-method) Creates an instance of several derived classes 
   - [**Abstract Factory**](#abstract-factory) Creates an instance of several families of classes
@@ -32,7 +32,7 @@ The three main design pattern categories are:
   - [**Singleton**](#singleton) A class of which only a single instance can exist
     
   [**Structural patterns**](#structural-patterns)
-  ---
+  
   Address the composition of classes and objects. Design patterns vary both in granularity and level of abstraction.
   - [**Adapter**](#adapter) Match interfaces of different classes
   - [**Bridge**](#bridge) Separates an object’s interface from its implementation
