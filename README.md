@@ -43,7 +43,7 @@ The three main design pattern categories are:
   - [**Proxy**](#proxy) An object representing another object
 
   [**Behavioral patterns**](#behavioral-patterns)
-  ---
+  
   Characterize the manner of class and object interaction and how responsibilities are distributed among them.
   - [**Chain of Responsibility**](#chain-of-responsibility) A way of passing a request between a chain of objects
   - [**Command**](#command) Encapsulate a command request as an object
