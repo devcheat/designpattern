@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>devcheat/js</title>
+    <style>
+        body {
+            font-family: Consolas;
+            background-color: rgb(255, 255, 255);
+            color: rgb(44, 44, 44);
+        }
+
+        .link,
+        .header1 {
+            background-color: transparent;
+            color: rgb(65, 65, 65);
+            margin: 5px;
+            border: 1px solid rgba(255, 255, 255, 0);
+
+            text-shadow: 2px 2px 8px rgb(255, 255, 255);
+            align-items: center;
+            font-style: normal;
+            font-size: 20px;
+            display: flex;
+            transition: 0.53s;
+        }
+
+        .link:hover {
+            color: rgba(40, 40, 40, 0.944);
+            font-weight: bolder;
+            text-shadow: 1px 1px 18px rgb(0, 213, 255);
+            border-radius: 1px 1px;
+            font-size: 25px;
+            background-color: aqua;
+            
+        }
+
+        .header1 { font-size: 35px; }
+
+        .header2 {
+            font-size: 30px;
+            background-color: rgb(45, 45, 45);
+            padding: 10px;
+            color: aliceblue;
+        }
+        .figcaption { font-size: 20px; }
+        .icon { font-size: 30px; }
+        .bookshelf { background-color: rgba(231, 231, 231, 0); }
+        img { width: 100px; height: 100px; }
+        .icon {transition: 0.53s; }
+        .icon:hover{ transform:rotateZ(30deg); }
+        a:link { text-decoration: none; }
+        a:visited { text-decoration: none; }
+        a:hover { text-decoration: none; }
+        a:active { text-decoration: none; }
+    </style>
+</head>
+
+<body>
+<h1>Design-pattern</h1>
+<h2>What are Design Patterns?</h2>
+<p>Design patterns are solutions to software design problems you find again and again in real-world application development. Patterns are about reusable designs and interactions of objects.
+</p>
+A design pattern is a proven design solution to a common problem faced by software developers. Design patterns became popular with the rise of Object Oriented Analysis and Design (OOAD). Design patterns are designed to help developers deliver higher quality, more easily maintained software products in less time and at lower cost. Design patterns are:
+<p></p>
+<li><b>encapsulated</b> - They embody design knowledge regarding collaboration of classes and objects, distribution of
+responsibility, and other design issues.
+<li><b>object-oriented</b> - They incorporate OOAD principles—e.g., low coupling, high cohesion.
+<li><b>reusable</b> - They are adaptable, flexible, general solutions to classes of problems with broad applicability. Design patterns simplify the task facing the developer.
+
+    <h2>How did design patterns originate?</h2>
+The history of design patterns is quite short. They originated as an architectural concept proposed by Christopher Alexander in the late nineteen seventies (ca. 1977). Kent Beck and Ward Cunningham experimented with the notion of applying patterns to computer programming in the late nineteen eighties (ca. 1987). Design patterns did not become widely used in computer science until after Design Patterns: Elements of Reusable Object-Oriented Software by the so-called Gang of Four was published in 1994.
+
+<h2>How are design patterns classified ?</h2>
+Design patterns are categorized to facilitate learning and extending them. They are classified in terms of the underlying problems they address, i.e. according to usage. The three main design pattern categories are:
+
+<ul>
+    <li><b>Behavioral design patterns</b> - characterize the manner of class and object interaction and how responsibilities are distributed among them.
+    <li><b>Creational design patterns</b> - address the object creation process. Creational design patterns encapsulate knowledge about how, when, and by whom an instance is created.
+    <li><b>Structural design patterns</b> - address the composition of classes and objects. Design patterns vary both in granularity and level of abstraction.
+</ul>    
+
+<div id="h2content">&#128218; Loading... 
+        <script>
+        function GenerateIndex(elementId) {
+            debugger;
+            var baseUrl = window.location.href;
+            let repoPath = window.location.host.replace(".github.io","")+ window.location.pathname;
+            
+            //repoPath = "Killercodes/design-pattern/";//comment this line before deploy
+
+            let fetchUrl = `https://api.github.com/repos/${repoPath}git/trees/main?recursive=1`;
+
+            (async () => {
+                debugger;
+                const response = await fetch(fetchUrl);
+                const data = await response.json();
+
+                let htmlString = "";
+                if (repoPath != null)
+                    htmlString = `<h2 id="h2" class="header2">&#128218; ${repoPath}</h2>`;
+
+                for (let file of data.tree) {
+                    if (file.path.toLowerCase().endsWith('.md') == true) {
+                        var actualpath = baseUrl + file.path;
+                        var absoluteUrl = actualpath.replace(".md", "").replace("/index", "");
+
+                        var fileName = (file.path).replace("/index.md", "");
+                        fileName = (fileName).replace(".md", "");
+
+                        var displayName = fileName.split('/');
+                        if (displayName.length >= 2) {
+                            displayName = `<div class="icon">&#128218;</div><b>${displayName[0]}</b>/${displayName[displayName.length - 1]}`;
+                        }
+                        else {
+                            displayName = `<div class="icon">&#128196;</div> ${displayName[displayName.length - 1]}`;
+                        }
+
+                        var randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+
+                        htmlString += `<a class="link" href="${absoluteUrl}">${displayName}</a>`;
+                    }
+                }
+
+                htmlString += '';
+                var result = "<div class='bookshelf'>";
+                result += htmlString;
+                result += '</div>';
+
+                document.getElementById(elementId).innerHTML = result;
+            })();
+        }
+
+        //invoker
+        
+        GenerateIndex("h2content");
+        </script>
+    </div>
+    <hr/>
+    
+</body>
+
+</html>
